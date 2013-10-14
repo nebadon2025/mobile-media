@@ -69,14 +69,14 @@
 <?php
 if($wildcard == null){
 if($offset == "0"){
-	echo "<a href='http://".$path2."?&offset=100'><img class='menuimg' src='buttons/next.jpg'></a>";
+	echo "<a href='http://".$path2."?&offset=".$count."'><img class='menuimg' src='buttons/next.jpg'></a>";
 	}
-if($offset > "0" AND $offset < floor($moviecount/100)*100){
-	echo "<a href='http://".$path2."?&offset=".($offset-100)."'><img class='menuimg' src='buttons/prev.jpg'></a>   ";
-	echo "<a href='http://".$path2."?&offset=".($offset+100)."'><img class='menuimg' src='buttons/next.jpg'></a>";
+if($offset > "0" AND $offset < floor($moviecount/$count)*$count){
+	echo "<a href='http://".$path2."?&offset=".($offset-$count)."'><img class='menuimg' src='buttons/prev.jpg'></a>   ";
+	echo "<a href='http://".$path2."?&offset=".($offset+$count)."'><img class='menuimg' src='buttons/next.jpg'></a>";
 	}	
-if($offset == floor($moviecount/100)*100){
-	echo "<a href='http://".$path2."?&offset=".($offset-100)."'><img class='menuimg' src='buttons/prev.jpg'></a><br/><br/>";
+if($offset == floor($moviecount/$count)*$count){
+	echo "<a href='http://".$path2."?&offset=".($offset-$count)."'><img class='menuimg' src='buttons/prev.jpg'></a><br/><br/>";
 	}
 }
 ?>
